@@ -45,4 +45,12 @@ export class HomePage {
 
     alert('HC-06 Connection Start!');
   }
+
+  ledOn() {
+    this.bluetoothSerial.write('ON');
+  }
+
+  ledOff() {
+    this.bluetoothSerial.write('OFF');
+  }
 }

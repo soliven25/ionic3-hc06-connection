@@ -7,15 +7,13 @@
 const int txPin = 2; 
 const int rxPin = 3; 
 const int Blue5V = 4;
-const int ShockPin = 10; 
-
-int shockCounter = 0;
-int shockVal = HIGH;
+const int LED = 5; 
+String myString = "";
 
 SoftwareSerial BTSerial(txPin, rxPin);
 
 void setup() {
-    pinMode(ShockPin, INPUT_PULLUP); // Shock is an input pin
+    pinMode(LED, OUTPUT); // LED
   
     pinMode(Blue5V, OUTPUT); // provide 5V for Bluetooth Moduel HC-06
     digitalWrite(Blue5V, HIGH); // initiate 5V
@@ -24,21 +22,26 @@ void setup() {
     BTSerial.begin(9600); // Bluetooth Serial
 }
 
-void deliverShockToRemote(){
-    BTSerial.write("Shock");
-}
 
 void loop() {
 
-    shockVal = digitalRead(ShockPin); //read the value from shock sensor
+    while(BTSerial.available())
+    {
+        char myChar = (char)BTSerial.read();
+        myString+=myChar;
+        delay(5);
+    }
 
-    if(shockVal == LOW){
-        Serial.print("Shock = "); // Output to serial
-        Serial.println(shockVal);
+    if(!myString.equal(""))
+    {
+        Serial.println("input : " + myString);
 
-        deliverShockToRemote();
-    
-        delay(1000);
-        shockCounter++;
+        if(myString == "ON")
+        {
+            digitalWrite(LED, HIGH);
+        }else{
+            digitalWrite(LED, LOW);
+        }
+        myString="";
     }
 }

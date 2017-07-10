@@ -6,6 +6,8 @@
 </ion-header>
 
 <ion-content>
-    <button class="button" (click)="ledOn()">ON</button>
-    <button class="button" (click)="ledOff()">OFF</button>
+  <div class="button-box">
+    <button ion-button class="button" (click)="ledOn()">ON</button>
+    <button ion-button class="button" color="danger" (click)="ledOff()">OFF</button>
+  </div>
 </ion-content>

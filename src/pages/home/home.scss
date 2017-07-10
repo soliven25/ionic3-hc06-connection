@@ -14,12 +14,12 @@ page-home {
 
 .button-led-on:active {
   background-color: #ffffff;
-  border: 2px solid blue;
+  border: 5px solid color($colors, primary);
   box-sizing: border-box;
 }
 
 .button-led-off:active {
   background-color: #ffffff;
-  border: 2px solid red;
+  border: 5px solid color($colors, danger);
   box-sizing: border-box;
 }

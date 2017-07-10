@@ -11,3 +11,15 @@ page-home {
   align-items: center;
   justify-content: center;
 }
+
+.button-led-on:active {
+  background-color: #ffffff;
+  border: 2px solid blue;
+  box-sizing: border-box;
+}
+
+.button-led-off:active {
+  background-color: #ffffff;
+  border: 2px solid red;
+  box-sizing: border-box;
+}

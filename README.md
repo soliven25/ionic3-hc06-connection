@@ -23,3 +23,8 @@ This is a simple sample for ionic3+android & arduino+hc-06 bluetooth connection.
 
 [sample usage](src/pages/home/home.ts)
 
+## App
+
+[APP](https://user-images.githubusercontent.com/14365151/28052272-f38c9ac4-6644-11e7-9d28-5abdf6d2e566.png)
+
+
